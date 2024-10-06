@@ -1,0 +1,39 @@
+version: v1beta1
+kind: Spicepod
+name: shadcn-ui
+
+datasets:
+  - from: github:github.com/shadcn-ui/ui/files/main
+    name: shadcn_ui.docs
+    description: Shadcn UI documentation from https://ui.shadcn.com/docs
+    params:
+      github_token: ${secrets:GITHUB_TOKEN}
+      include: "apps/www/content/docs/**/*.mdx"
+    acceleration:
+      enabled: true
+      refresh_check_interval: 12h
+      refresh_jitter_enabled: true
+      refresh_jitter_max: 5m
+
+  - from: github:github.com/shadcn-ui/ui/files/main
+    name: shadcn_ui.components
+    description: Shadcn UI default components source code
+    params:
+      github_token: ${secrets:GITHUB_TOKEN}
+      include: "apps/www/registry/default/ui/**/*.tsx"
+    acceleration:
+      enabled: true
+      refresh_check_interval: 12h
+      refresh_jitter_enabled: true
+      refresh_jitter_max: 5m
+
+  - from: github:github.com/shadcn-ui/ui/issues
+    name: vercel_ai_sdk.issues
+    description: Shadcn UI GitHub issues from github.com/shadcn-ui/ui
+    params:
+      github_token: ${secrets:GITHUB_TOKEN}
+    acceleration:
+      enabled: true
+      refresh_check_interval: 12h
+      refresh_jitter_enabled: true
+      refresh_jitter_max: 5m
