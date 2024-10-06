@@ -28,7 +28,7 @@ datasets:
       refresh_jitter_max: 5m
 
   - from: github:github.com/shadcn-ui/ui/issues
-    name: vercel_ai_sdk.issues
+    name: shadcn_ui.issues
     description: Shadcn UI GitHub issues from github.com/shadcn-ui/ui
     params:
       github_token: ${secrets:GITHUB_TOKEN}
