@@ -7,7 +7,9 @@ datasets:
     name: shadcn_ui.docs
     description: Shadcn UI documentation from https://ui.shadcn.com/docs
     params:
-      github_token: ${secrets:GITHUB_TOKEN}
+      github_client_id: ${secrets:GITHUB_CLIENT_ID}
+      github_private_key: ${secrets:GITHUB_PRIVATE_KEY}
+      github_installation_id: ${secrets:GITHUB_INSTALLATION_ID}
       include: "apps/www/content/docs/**/*.mdx"
     acceleration:
       enabled: true
@@ -19,7 +21,9 @@ datasets:
     name: shadcn_ui.components
     description: Shadcn UI default components source code
     params:
-      github_token: ${secrets:GITHUB_TOKEN}
+      github_client_id: ${secrets:GITHUB_CLIENT_ID}
+      github_private_key: ${secrets:GITHUB_PRIVATE_KEY}
+      github_installation_id: ${secrets:GITHUB_INSTALLATION_ID}
       include: "apps/www/registry/default/ui/**/*.tsx"
     acceleration:
       enabled: true
@@ -32,7 +36,9 @@ datasets:
     description: Shadcn UI GitHub issues from github.com/shadcn-ui/ui
     time_column: created_at
     params:
-      github_token: ${secrets:GITHUB_TOKEN}
+      github_client_id: ${secrets:GITHUB_CLIENT_ID}
+      github_private_key: ${secrets:GITHUB_PRIVATE_KEY}
+      github_installation_id: ${secrets:GITHUB_INSTALLATION_ID}
     acceleration:
       enabled: true
       refresh_mode: full
