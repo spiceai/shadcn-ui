@@ -2,6 +2,9 @@ version: v1beta1
 kind: Spicepod
 name: shadcn-ui
 
+runtime:
+  dataset_load_parallelism: 1
+
 datasets:
   - from: github:github.com/shadcn-ui/ui/files/main
     name: shadcn_ui.docs
